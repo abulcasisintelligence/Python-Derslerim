@@ -1,0 +1,64 @@
+def sonraki_harf(harf):
+    alfabedeki_harfler = "abcçdefgğhıijklmnoöprsştuüvyz"
+    
+    if harf in alfabedeki_harfler:
+        # Harfin indeksini bul
+        index = alfabedeki_harfler.index(harf)
+        # Sıradaki harfe geç (indexi +1)
+        return alfabedeki_harfler[(index + 1) % len(alfabedeki_harfler)]
+    else:
+        # Eğer harf Türk alfabesinde yoksa olduğu gibi döndür
+        return harf
+
+def sifrele(cumle):
+    # Boşlukları - ile değiştir
+    cumle = cumle.replace(" ", "-")
+    
+    # Şifreli cümleyi oluşturmak için boş bir liste
+    sifreli_cumle = ""
+    
+    for harf in cumle:
+        sifreli_cumle += sonraki_harf(harf)
+    
+    return sifreli_cumle
+
+# Kullanıcıdan cümle al
+cumle = input("Bir cümle girin: ")
+
+# Cümleyi şifrele
+sifreli_cumle = sifrele(cumle)
+
+print("Şifreli cümle:", sifreli_cumle)
+
+
+def onceki_harf(harf):
+    alfabedeki_harfler = "abcçdefgğhıijklmnoöprsştuüvyz"
+    
+    if harf in alfabedeki_harfler:
+        # Harfin indeksini bul
+        index = alfabedeki_harfler.index(harf)
+        # Bir önceki harfe geç (indexi -1)
+        return alfabedeki_harfler[(index - 1) % len(alfabedeki_harfler)]
+    else:
+        # Eğer harf Türk alfabesinde yoksa olduğu gibi döndür
+        return harf
+
+def decode(cumle):
+    # - karakterlerini boşlukla değiştir
+    cumle = cumle.replace("-", " ")
+    
+    # Şifreli cümleyi çözmek için boş bir liste
+    cozulmus_cumle = ""
+    
+    for harf in cumle:
+        cozulmus_cumle += onceki_harf(harf)
+    
+    return cozulmus_cumle
+
+# Kullanıcıdan şifreli cümle al
+sifreli_cumle = input("Şifreli cümleyi girin: ")
+
+# Cümleyi çöz
+cozulmus_cumle = decode(sifreli_cumle)
+
+print("Çözülmüş cümle:", cozulmus_cumle)
