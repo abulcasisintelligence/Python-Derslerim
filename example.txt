@@ -1,0 +1,22 @@
+# Python Dosya İşlemleri
+
+open()      # Dosya açmak için kullanılır. Dosya yoksa oluşturur.
+read()      # Dosyanın içeriğini okumak için kullanılır.
+write()     # Dosyaya veri yazmak için kullanılır.
+close()     # Açık olan dosyayı kapatmak için kullanılır.
+seek()      # Dosya içindeki imleci belirtilen konuma taşır.
+tell()      # Dosya içindeki imlecin mevcut konumunu döner.
+readline()  # Dosyadan bir satır okur.
+readlines() # Dosyadan tüm satırları okuyup bir liste olarak döner.
+writelines()# Bir liste içindeki verileri dosyaya yazar.
+
+#---------------------------------------------------------------
+
+'r': Sadece okuma. Dosya yoksa hata verir.
+'w': Sadece yazma. Dosya varsa içeriği siler, yoksa yeni dosya oluşturur.
+'a': Sadece ekleme. Dosya varsa sonuna ekler, yoksa yeni dosya oluşturur.
+'r+': Hem okuma hem yazma. Dosya yoksa hata verir.
+'w+': Hem yazma hem okuma. Dosya varsa içeriği siler, yoksa yeni dosya oluşturur.
+'a+': Hem ekleme hem okuma. Dosya varsa sonuna ekler, yoksa yeni dosya oluşturur.
+
+
